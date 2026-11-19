@@ -16,15 +16,15 @@
 
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Primary Meta Tags -->
-    <title>Volt - Free Bootstrap 5 Dashboard</title>
+    <title>@yield('title', 'E-Kantin PCR') | E-Kantin PCR</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="Volt - Free Bootstrap 5 Dashboard">
-    <meta name="author" content="Themesberg">
+    <meta name="title" content="E-Kantin PCR">
+    <meta name="author" content="Tim E-Kantin PCR">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
@@ -48,18 +48,23 @@
     @include('layouts.admin.sidebar')
     {{-- End Sidebar --}}
 
-    <main class="content">
+    <main class="content d-flex flex-column min-vh-100">
 
         {{-- Start Header --}}
         @include('layouts.admin.header')
         {{-- End Header --}}
+
+        {{-- Pesan sukses / error --}}
+        @include('layouts.admin.alert')
 
         {{-- Start Main content --}}
         @yield('content')
         {{-- End Main Content --}}
 
         {{-- Start Footer --}}
-        @include('layouts.admin.footer')
+        <div class="mt-auto pt-4">
+         @include('layouts.admin.footer')
+        </div>
         {{-- End Footer --}}
     </main>
 
